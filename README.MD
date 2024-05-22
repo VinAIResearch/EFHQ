@@ -39,8 +39,8 @@ By downloading the EFHQ dataset, USER agrees:
 - to **not** distribute EFHQ or part of EFHQ in any original or modified form.
 - and to cite our paper above whenever EFHQ is employed to help produce published results.
 
-## Copyright (c) 2024 VinAI Research
-
+## License
+	Copyright (c) 2024 VinAI Research
 	THE DATA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
