@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="EFHQ: Multi-purpose ExtremePose-Face-HQ dataset">
+  <meta property="og:title" content="EFHQ: Multi-purpose ExtremePose-Face-HQ dataset" />
+  <meta property="og:description" content="A novel dataset named Extreme Pose Face High-Quality Dataset (EFHQ), served for multi-tasks such as face generation, face reenactment and face verification." />
+  <meta property="og:url" content="https://bomcon123456.github.io/efhq/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>EFHQ Dataset</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">[CVPR 2024] EFHQ: Multi-purpose ExtremePose-Face-HQ dataset</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://github.com/bomcon123456" target="_blank">Trung Tuan Dao</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.vinai.io/" target="_blank">Duc Hong Vu</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/cuongpham/home" target="_blank">Cuong Pham</a>,</span>
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=FYZ5ODQAAAAJ&hl=en" target="_blank">Anh Tran</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">VinAI Research, Vietnam</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2312.17205" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/vinairesearch/efhq" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2312.17205" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/teaser.png" alt="MY ALT TEXT" />
+        <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+        <!-- Your video here -->
+        <!-- <source src="static/videos/banner_video.mp4" -->
+        <!-- type="video/mp4"> -->
+        <!-- </video> -->
+        <h2 class="subtitle">
+          <strong>Benefits of our proposed dataset (EFHQ).</strong> Standard large-scale facial datasets have most
+          images at near frontal views, causing inferior performance of trained models on downstream tasks when dealing
+          with extreme head poses. For instance, the trained 2D image generators and text-to-image ones often produce
+          only near frontal faces, while the 3D face generators and face reenactment methods often show distorted
+          outputs at profile views. The recently proposed dataset LPFF partially handles that issue by providing
+          complementary images at extreme head poses for only 2D and 3D image generation tasks. Our proposed dataset
+          EFHQ provides high-quality extreme-pose images to complement a wide range of face-related tasks. It supports
+          2D and 3D image generation, with generally better diversity than LPFF. EFHQ also helps correct the outputs of
+          text-to-image generation and face reenactment at extreme views. Finally, EFHQ provides a more challenging
+          pose-based face verification benchmark to better assess the quality of face recognition networks.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The existing facial datasets, while having plentiful images at near frontal views, lack images with
+              extreme head poses, leading to the downgraded performance of deep learning models when dealing with
+              profile or pitched faces. This work aims to address this gap by introducing a novel dataset named Extreme
+              Pose Face High-Quality Dataset (EFHQ), which includes a maximum of 450k high-quality images of faces at
+              extreme poses. To produce such a massive dataset, we utilize a novel and meticulous dataset processing
+              pipeline to curate two publicly available datasets, VFHQ and CelebV-HQ, which contain many high-resolution
+              face videos captured in various settings. Our dataset can complement existing datasets on various
+              facial-related tasks, such as facial synthesis with 2D/3D-aware GAN, diffusion-based text-to-image face
+              generation, and face reenactment. Specifically, training with EFHQ helps models generalize well across
+              diverse poses, significantly improving performance in scenarios involving extreme views, confirmed by
+              extensive experiments. Additionally, we utilize EFHQ to define a challenging cross-view face verification
+              benchmark, in which the performance of SOTA face recognition models drops 5-37% compared to
+              frontal-to-frontal scenarios, aiming to stimulate studies on face recognition under severe pose conditions
+              in the wild.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Teaser video-->
+  <section class="hero is-small">
+    <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        Your video here
+        <source src="static/videos/banner_video.mp4" <!-- type="video/mp4"> -->
+      </video>
+    </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+  <!-- End youtube video -->
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">2D GAN-based Face Generation</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/StyleGAN-compared.png" alt="MY ALT TEXT" style="width: 50%; height: auto;" />
+            <h2 class="subtitle has-text-centered">
+              Comparison between profile-view generated samples of StyleGAN2-ADA training with FFHQ+LPFF (left) and FFHQ+EFHQ
+(right), with truncation ψ=0.7.
+            </h2>
+          </div>
+          <div class="item has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/StyleGAN_posegrid.png" alt="MY ALT TEXT" style="width: 50%; height: auto;" />
+            <h2 class="subtitle has-text-centered">
+              Samples from StyleGAN2-ADA training with FFHQ+EFHQ, with truncation ψ=0.7.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">3D-aware GAN-based Face Generation</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/eg3d/00.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+          </div>
+          <div class="item  has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/eg3d/01.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+          </div>
+          <div class="item  has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/eg3d/02.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+          </div>
+          <div class="item  has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/eg3d/03.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+          </div>
+          <div class="item  has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/eg3d/04.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+          </div>
+          <div class="item  has-text-centered">
+            <!-- Your image here -->
+            <img src="static/images/eg3d/05.png" alt="MY ALT TEXT" style="width: 75%; height: auto;" />
+          </div>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        Comparison between multiview generated samples, with truncation ψ=0.8, of EG3D model trained with various datasets. <br>Top: FFHQ, Middle: FFHQ+LPFF, Bottom: FFHQ+EFHQ. </br>
+      </h2>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!-- Video carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Face Reenactment</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/facereenact_1.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle  has-text-centered">
+              <strong>Same-Identity Reenactment</strong> Comparison between TPS trained on VoxCeleb1 and VoxCeleb1+EFHQ.
+            </h2>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop height="100%">
+              <!-- Your video file here -->
+              <source src="static/videos/facereenact_2.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <strong>Same-Identity Reenactment</strong> Comparison between LIA trained on VoxCeleb1 and VoxCeleb1+EFHQ.
+            </h2>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/facereenact_3.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <strong>Cross-Identity Reenactment</strong> Comparison between TPS trained on VoxCeleb1 and
+              VoxCeleb1+EFHQ.
+            </h2>
+          </div>
+          <div class="item item-video4">
+            <video poster="" id="video4" autoplay controls muted loop height="100%">\
+              <!-- Your video file here -->
+              <source src="static/videos/facereenact_4.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered">
+              <strong>Cross-Identity Reenactment</strong> Comparison between LIA trained on VoxCeleb1 and
+              VoxCeleb1+EFHQ.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End video carousel -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{dao2024efhq,
+  title={EFHQ: Multi-purpose ExtremePose-Face-HQ dataset}, 
+  author={Trung Tuan Dao and Duc Hong Vu and Cuong Pham and Anh Tran},
+  year={2024},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
